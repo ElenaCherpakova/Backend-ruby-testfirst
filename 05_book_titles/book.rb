@@ -8,9 +8,8 @@ class Book
 
   def title=(new_title)
     not_capitalize_words = %w[the a an and in of]
-    capitalized = new_title.capitalize.split(' ').map do |word|
+    @title = new_title.capitalize.split(' ').map do |word|
       not_capitalize_words.include?(word) ? word : word.capitalize
-    end
-    @title = capitalized.join(' ')
+    end.join(' ')
   end
 end
